@@ -1,5 +1,9 @@
 import css from './page.module.css';
 
+export const metadata = {
+  title: 'Home'
+}
+
 const Home = () => {
     return (
 

@@ -1,12 +1,11 @@
-.toolbar {
-    padding: 2rem 0;
-}
+
 
 .toolbarRow {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
+    padding: 0;
     gap: 1rem;
 }
 
