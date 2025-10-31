@@ -9,12 +9,18 @@ interface PageProps {
   params: Promise<{ id: string }>;
 }
 
-export const generateMetadata = async ({ params }: PageProps) => {
+export const generateMetadata = async ({
+  params,
+}: PageProps): Promise<{ title: string; description: string }> => {
   const { id } = await params;
   const note = await getNoteById(id);
   return {
     title: `Note: ${note.title}`,
     description: note.content.slice(0, 30),
+    // openGraph: {
+    //   title: `Note: ${note.title}`,
+    //   description: note.content.slice(0,100),
+    // }
   };
 };
 

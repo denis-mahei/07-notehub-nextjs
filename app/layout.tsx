@@ -1,24 +1,21 @@
 import type { Metadata } from 'next';
-import {Geist, Geist_Mono} from "next/font/google";
-import "./globals.css";
+import { Poppins } from 'next/font/google';
+import {TanStackProvider} from "@/components/TanStackProvider/TanStackProvider";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import {ReactNode} from "react";
-import {TanStackProvider} from "@/components/TanStackProvider/TanStackProvider";
+import "./globals.css";
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
+const roboto = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-poppins',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: 'Notes',
-  description: 'List of your notes'
+  title: 'NoteHub',
+  description: 'Created by Denys Mahei'
 }
 
 export default function RootLayout({
@@ -31,7 +28,7 @@ export default function RootLayout({
 
     return (
         <html lang="en">
-        <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <body className={roboto.variable}>
         <TanStackProvider>
             <div className="wrapper">
                 <Header/>
